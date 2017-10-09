@@ -1,0 +1,117 @@
+* {
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	
+	background-image: url(http://68.media.tumblr.com/790fc071da251c83db5bcb5ff9f1470f/tumblr_oela3a1CEL1tvca89o5_1280.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: black;
+	
+	
+
+}
+.loginForm {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: auto;
+}
+
+#singin {
+	background-color: rgba(0, 120, 201, 0.1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 2px grey;
+	border-style: double;
+	padding: 1% 1% 0 2%;
+	width: 250px;
+	height: 300px;
+	margin: auto;
+
+
+}
+#logo {
+	color: rgba(255,255,255,0.7);
+	font: 300 25px Verdana;
+	top: 0;
+	padding-bottom: 1%;
+	text-align: left;
+	margin-left: 27%;
+	
+}
+
+.form_inputs {
+	padding: 6% 3% 5% 3%;
+	margin-top: 1%;
+	
+}
+
+#sI_button {
+	background: transparent;
+	font: 100 small-caps 12px/14px Arial;
+	width: 100px;
+	border: solid;
+	margin: 5% 0 0 1%;
+	padding: 2%;
+	cursor: pointer;
+	color: white;
+
+
+}
+
+#sI_button:hover {background-color: rgba(227,200,0,0.1);}
+
+
+.a_field {
+	height: 22px;
+	width: 200px;
+	color: white;
+	background: transparent;
+	border: 2px double grey;
+}
+
+.validation {
+	font: 100 small-caps 8px/9px Arial;
+	color: rgba(255,255,0,0.5);
+	display: block;
+	padding: 0.5%;
+	
+}
+
+.a_field:focus {
+	border-color: yellow;
+	color: yellow;
+}
+
+#email {
+
+}
+
+.sUp {
+	padding: 0.5%;
+	font: italic 10px sans-serif;
+	color: white;
+	position: fixed;
+}
+
+#sUp, #sIn {
+	color: #48d1cc;
+	cursor: pointer;
+}
+#sUp:hover , #sIn:hover {
+	color: white;
+	
+}
+#sIn {
+	display: none;
+}
