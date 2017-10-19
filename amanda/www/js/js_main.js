@@ -1,6 +1,98 @@
 
 $( document ).ready( function(){
+        // $('#publish').click(function () {
+        //  var iPhName = $('#iPhName').val();
+        //  var discr = $('#discr').val();
+        // $.ajax({
+        //     url: '/functions/upload.php',
+        //     type: 'POST',
+        //     chache: false,
+        //     data: {'iPhName' : iPhName, 'discr' : discr},
+        //     dataType: 'html',
+        //     success: function(data){
+        //       alert(data);
+        //     }
+    //     // });
 
+    // });
+        var path;
+       $("#inputFile").change(function() {
+        
+        $("#imageform").ajaxForm({
+            target: '#leftSide', 
+            beforeSubmit:function() {
+                $('#waitingImgUpl').css('display', 'block');
+            }, 
+            success:function(data){
+               var tempImgPath = data;
+               var end = tempImgPath.indexOf(" class");
+               path = tempImgPath.substring(10,end-1);
+               $('#waitingImgUpl').css('display', 'none');
+            }, 
+            error:function(){
+                alert('error')
+            } 
+        }).submit();
+    });
+    
+    $('#publish').click(function () {
+        var iPhName = 'no name';
+        var discr = 'no description';
+        if($('#iPhName').val())
+        iPhName = $('#iPhName').val();
+        if($('#discr').val())
+        discr = $('#discr').val();
+        
+       $.ajax({
+            url: '/functions/upload_db.php',
+            type: 'POST',
+            chache: false,
+            data: {'iPhName' : iPhName, 'discr' : discr, 'path' : path},
+            dataType: 'html',
+          success: function(data){
+               
+                 alert(data);
+                 
+          }
+        }); 
+    });
+    
+	
+	var num = 0;
+    $(window).scroll( function (){
+    	var windowScroll = $(window).scrollTop();
+    	var windowHeight = $(window).height();
+    	var documentHeight = $(document).height();
+    	console.log(Math.ceil(windowScroll) + " " + windowHeight + " " + documentHeight)
+    	 if((Math.ceil(windowScroll) + windowHeight) == documentHeight) {
+    	 	
+    	 	$.ajax({
+         	url: "/functions/scrollImg.php",
+          	type: "GET",
+         	data: {'num': num},
+         	beforeSend: function() {
+         		$('#waiting').css('display', 'block');
+         		
+         	},        	 
+          	cache: false,
+          	success: function(response){
+          		$('#waiting').css('display', 'none');
+              if(response == 0){  // смотрим ответ от сервера и выполняем соответствующее действие
+                 alert("huinya");
+                 
+              }else{
+                 $('#ulmain').append(response);
+                 num = num + 8;
+                 
+              }
+           }
+        });
+
+
+    	 } 
+    });
+ 
+	
 // вся мaгия пoсле зaгрузки стрaницы
 	var index = 1;
 	var tag;
@@ -75,15 +167,7 @@ $( document ).ready( function(){
 			}
 		});
 		
-	$('#slider-holder ul').jcarousel({
-		scroll: 1,
-		wrap: 'both',
-		initCallback: _init_carousel,
-		buttonNextHTML: null,
-		buttonPrevHTML: null
-	});
+
 	
-	$('.tabs a').slide({
-		'slide_selector' : '.tab-content'
-	})
+	
 });

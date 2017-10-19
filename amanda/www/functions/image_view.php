@@ -2,7 +2,7 @@
 	$mysqli = false;
 	function connectDB () {
 		global $mysqli;
-		$mysqli = new mysqli("localhost","root","","imagepreviewer");
+		$mysqli = new mysqli("localhost","id3207432_amanda","Woodward7&8","id3207432_images");
 		$mysqli->query("SET NAMES 'utf8'");
 		$mysqli->query("SET CHARACTER SET 'utf8'");
 		$mysqli->query("SET SESSION collation_connection = 'utf8_general_ci'");
@@ -17,7 +17,7 @@
 		global $mysqli;
 		connectDB();		
  
-		$result = $mysqli->query("SELECT * FROM `images` ORDER BY `id` DESC LIMIT $limit");		
+		$result = $mysqli->query("SELECT * FROM `images` ORDER BY `id` LIMIT $limit");		
 		if(!$result) 
 { echo "Запрос не работает."; }
 		closeDB();

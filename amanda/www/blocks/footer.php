@@ -1,16 +1,16 @@
 <footer>
 <div id="footer">
 	<div class="left">
-		<a href="#">Home</a>
+		<a href="/">Home</a>
 		<span>|</span>
-		<a href="#">Support</a>
+		<a href="about.php">About</a>
 		<span>|</span>
 		<a href="#">My Account</a>
 		<span>|</span>
-		<a href="#">Contact</a>
+		<a href="#">Contacts</a>
 	</div>
-	<div class="right">
-		&copy; Konstantin Starovoytov <a href="konstantinstarovoytov.tumblr.com" target="_blank" title="CSS Templates">Tumblr</a>
+	<div class="right_f">
+		&copy; Konstantin Starovoytov <a href="https://konstantinstarovoytov.tumblr.com" target="_blank" title="Konstantin Starovoytov">Tumblr</a>
 	</div>
 </div>
 </footer>

@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>Image previewer</title>
-	<link rel="stylesheet" href="css/style_main.css" type="text/css" media="all" />
-	<link href="css/images/if_camera_2628474.ico" rel="shortcut icon" type="image/x-icon" />
-	<!--[if lte IE 6]>
-		<style type="text/css" media="screen">
-			.tabbed { height:420px; }
-		</style>
-	<![endif]-->
+    <?php
+	$title = "About";
+	require_once "blocks/head.php";
 	
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+	?>
 	<script src="js/js_main.js" type="text/javascript"></script>
 	
 </head>

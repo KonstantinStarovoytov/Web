@@ -1,34 +1,38 @@
 $(document).ready(function() {
-    if(fail_login == false) alert('EEEE');
+    
     $('#sI_button').click(function () {
-    if(($('#sI_button').attr('value') == "Login")){
-        var login = $('#login').val();
-        var password = $('#pass').val();
-        var email = 'empty';
+        var login,password,email = '';
+    if($('#sI_button').attr('value') == "Login"){
+         login = $('#login').val();
+         password = $('#pass').val();
+         //alert("Login")
         
         $.ajax({
-            url: '/ajax/reg.php',
+            url: '/ajax/reg_bd.php',
             type: 'POST',
             chache: false,
-            data: {'login' : login, 'pass' : password, 'email' : email},
-            dataType: 'htlm',
-            success: function(data){
-                alert('Privetik');
-            }
+            data: {'login' : login, 'pass' : password, 'email' : ''},
+            dataType: 'html',
+          success: function(data){
+               
+                 alert("успех");
+                 $(location).attr('href',"https://imageprv.000webhostapp.com/index.php");
+          }
         });
 
-    } else if(isReadyToSend = true && ($('#sI_button').attr('value') == "Sign me up")){
-        var login = $('#login').val();
-        var password = $('#pass').val();
-        var email = $('#email').val();
+    } else if($('#sI_button').attr('value') == "Sign me up"){
+         login = $('#login').val();
+         password = $('#pass').val();
+         email = $('#email').val();
         $.ajax({
-            url: '/ajax/reg.php',
+            url: '/ajax/reg_bd.php',
             type: 'POST',
             chache: false,
             data: {'login' : login, 'pass' : password, 'email' : email},
             dataType: 'html',
             success: function(data){
-                alert('Privetik');
+               alert(data);
+                $(location).attr('href',"https://imageprv.000webhostapp.com/index.php");
             }
         });
 
@@ -128,7 +132,7 @@ $(this).css({'border-color' : 'yellow'});
  $('#email').blur(function() {
  	$('.validation').text('');
     $('.a_field').css({'border' : '2px double grey'});
-        if($(this).val() != '') {
+        if($(this).val() !== '') {
              var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
             if(pattern.test($(this).val())){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
@@ -136,20 +140,20 @@ $(this).css({'border-color' : 'yellow'});
                 fail_email = false;  
             } else {
                 $(this).css({'border-color' : 'red'});
-                $('#validemail').text('Email is not correct');
+                $('#validemail').text('Email fail! Please type in your correct email address');
                 fail_email = true;
             }
         } else {
             // Поле email пустое, выводим предупреждающее сообщение
             $(this).css({'border-color' : 'red'});
-            $('#validemail').text('Email field is empty');
+            $('#validemail').text('Oops! You need to type your email here');
             fail_email = true;
         }
     });
  $('#pass').blur(function() {
  	$('.validation').text('');
     $('.a_field').css({'border' : '2px double grey'});
-        if($(this).val() != '') {
+        if($(this).val() !== '') {
              var pattern = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
             if(pattern.test($(this).val())){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
@@ -171,7 +175,7 @@ $(this).css({'border-color' : 'yellow'});
  	$('#repass').blur(function() {
  		$('.validation').text('');
         $('.a_field').css({'border' : '2px double grey'});
-        if($(this).val() != '') {
+        if($(this).val() !== '') {
              //var pattern = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
             if($(this).val() == $('#pass').val()){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
@@ -192,7 +196,7 @@ $(this).css({'border-color' : 'yellow'});
     $('#login').blur(function() {
  		$('.validation').text('');
         $('.a_field').css({'border' : '2px double grey'});
-        if($(this).val() != '') {
+        if($(this).val() !== '') {
              var pattern = /^[a-zA-Z]{1,20}$/g;
             if(pattern.test($(this).val())){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
@@ -215,7 +219,7 @@ $(this).css({'border-color' : 'yellow'});
     var isReadyToSend = false;
     $('#login,#pass,#repass,#email').blur( function() {
         if($('#sI_button').attr('value') == "Login"){
-            if((!fail_login && !fail_pass)) {
+            if(!fail_login && !fail_pass) {
                 $('#sI_button').css({'border-color':'rgba(173, 255, 47, 0.7)', 'background-color' : 'rgba(173, 255, 47, 0.05)', 'color' : 'yellow'});
                 isReadyToSend = true;
             }

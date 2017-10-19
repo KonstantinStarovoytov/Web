@@ -1,7 +1,7 @@
 * { padding:0; margin:0; outline:0; }
 
 body {
-	background-image: url(http://68.media.tumblr.com/790fc071da251c83db5bcb5ff9f1470f/tumblr_oela3a1CEL1tvca89o5_1280.jpg);
+	background-image: url(../images/background_1.jpg);
 	background-color: rgb(0,0,0);
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -20,7 +20,8 @@ a { color:#890000; text-decoration: none; cursor:pointer; }
 a:hover { color:#333; }
 
 .alignleft { float:left; display:inline; }
-.right, .alignright { float:right; display:inline; }
+.right, .alignright { float:left; display:inline; }
+#hi {font: 300 small-caps 16px/18px Helvetica;letter-spacing: 4px; margin-top: 10px; position: absolute;float: left;text-align: left;color: white }
 
 .cl { font-size:0; line-height:0; clear:both; display:block; height:0; }
 
@@ -67,139 +68,105 @@ h1#textLogo { padding: 40px 0 0 20px; margin-left: 50px; display: inline-block;}
 .options span.more-links a{ margin-left:9px;}
 
 .cart { float:left; position:relative; top:2px; }
-.cart strong{ float:left; width:25px; height:36px; background-color: rgba(0,0,0,0.5); text-align: right; font-size:20px; color:#701616; line-height:36px; padding:0 7px 0 5px;}
+.cart strong{ float:left; width:25px; height:36px; background-color: rgba(0,0,0,0.5); text-align: right; font-size:30px; color:white; line-height:36px; padding:0 7px 0 5px;}
 .cart-ico{ float:left; width:22px; height:36px; background-color: rgba(0,0,0,0.70); font-size:0; line-height:0; text-indent: -4000px;}
 
 #content { padding-top:20px; }
 
 
 
-#container { background-color: rgba(255,255,255,0.40); padding:30px 30px; opacity: 0.5}
+#container { background-color: rgba(255,255,255,0.15); padding:30px 30px; opacity: 1}
 
 .items { position:relative; width:870px; margin-right:20px; padding-bottom:5px; }
 .items ul{ list-style-type: none;vertical-align: middle;}
-.items ul .image{ text-align: center; }
-.items ul .image img{ max-width: 184px; max-height: 184px; width: 100%;height: auto; padding: 5px; }
-.items ul li{ float:left; border:dashed 1px #cfcfcf; width:194px;height: 194px; margin:0 12px 12px 0 }
+.items ul .image{ text-align: center; line-height: 200px }
+.items ul .image img{ max-width: 175px; max-height: 175px; width: 100%;height: auto;vertical-align: middle;opacity: 1;border:2px solid rgba(0,0,0,0.9) }
+.items ul li{ float:left; border:dashed 1px rgba(255,255,255,0.5); width:194px;height: 194px; margin:0 12px 12px 0;background-color: rgba(0,0,0,0.75) }
 .items ul li p span{ color:#890000}
 .items ul li p.price{ padding-top:15px; }
 .items ul li p.price strong{ color:#890000; font-size:14px;}
 
-.brands h3 { padding-bottom:10px;}
+.brands h3 { padding-bottom:10px; }
 .brands a { margin-right:30px;}
+.b_img {max-height: 90px; max-width:90px;opacity: 0.75}
 
 #footer { border-top:dashed 1px #cfcfcf; margin-top:20px; padding:10px 0; color: rgba(0,0,0,0.6);}
 #footer a{ color: rgba(0,0,0,0.6); }
 #footer a:hover{ color: rgba(255,0,0,0.6); }
 #footer span{ padding:0 5px;}
-
+.right_f {float:right; display:inline;}
 .tab-content { display:none;}
 
 .tabbed { min-height:420px;}
 
+/*modal window*/
 
 #modal_form {
 	width: 750px; 
-	height: 500px; /* Рaзмеры дoлжны быть фиксирoвaны */
+	height: 500px; /* width and hight - fixed */
 	border: 3px rgba(255,255,255,0.3) solid;
 	background: rgba(0, 0, 0, 0.8);
-	position: absolute; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
-	top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
-	left: 50%; /* пoлoвинa экрaнa слевa */
+	position: absolute; 
+	top: 45%; 
+	left: 50%; 
 	margin-top: -250px;
-	margin-left: -375px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
-	display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
-	opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
-	z-index: 5; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+	margin-left: -375px; /* center */
+	display: none; /* hidden */
+	opacity: 0; /* for JS animation */
+	z-index: 5; /* priorety */
 	padding: 20px 10px;
 
 }
-/* Кнoпкa зaкрыть для тех ктo в тaнке) */
-#modal_form #modal_close {
-	width: 21px;
-	height: 21px;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	cursor: pointer;
-	display: block;
-}
-/* Пoдлoжкa */
-#overlay {
-	z-index:3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
-	position:fixed; /* всегдa перекрывaет весь сaйт */
-	background-color:rgba(0, 120, 201, 0.15); /* чернaя */
-	opacity:0.8; /* нo немнoгo прoзрaчнa */
-	-moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+#overlay 
+{
+	z-index:3; /* priorety */
+	position:fixed; 
+	background-color:rgba(0, 120, 201, 0.15); 
+	opacity:0.8;
+	-moz-opacity:0.8; 
 	filter:alpha(opacity=80);
 	width:100%; 
-	height:100%; /* рaзмерoм вo весь экрaн */
-	top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+	height:100%; 
+	top:0; 
 	left:0;
 	cursor:pointer;
 	display:none; /* в oбычнoм сoстoянии её нет) */
 }
 
-#uplImg {
-	background: transparent url(../images/uploadimg.png) no-repeat center top;
-}
+/*left  sides*/
 
-#leftSide {
-    overflow:hidden;
-    width:400px;
-    height:400px;
-    background-color:rgba(0, 120, 201, 0.03);
-    border: 2px double grey;
-    margin: 8% 0 0 5%;
-    position: absolute;
-    display: inline-block;
-   
-}
-
+#leftSide {overflow:hidden;width:400px;height:400px;background-color:rgba(0, 120, 201, 0.03);border: 2px double grey;margin: 8% 0 0 5%;position: absolute;display: inline-block}
+#uplImg {background: transparent url(../images/uploadimg.png) no-repeat center top}
 #inpImg {width: 256px;height: 192px;background-color: white;overflow: hidden;background:url(../images/uploadimg1.png) no-repeat;cursor:pointer;margin: 102px auto;}
-#inputFile {
-    opacity:0;
-    filter:alpha(opacity:0);
-    font-size:	220px;
-    cursor:pointer;
-    padding:0px;
-    margin:0px;
-    border:none;
-    width: 250px;
-	
-}
+#inputFile {opacity:0;filter: alpha (opacity:0);font-size:	220px;cursor:pointer;padding:0px;margin:0px;border:none;width: 250px}
 #uplImgTitle {color: rgba(255,255,255,0.65);letter-spacing: 15px; font-variant: small-caps;font-size: 10px;font-variant: Geneva, Arial, Helvetica, sans-serif; text-align: center;}
+#leftSide img .preview {max-width: 10%; max-height: 10%;}
+/*right side*/
 
-#rightSide {
-	margin: 6% 2% 0 0;
-	float: right;
-	display: block;
-	position: relative;
-	width: auto;
-	height: 90%;
-	border: none;
-}
+#rightSide {margin: 6% 2% 0 0;float: right;display: block;position: relative;width: auto;height: 90%;border: none}
+#rightSide h2 {color: yellow; opacity: 0.7;font:100 small-caps 17px Arial;margin-bottom: 10px; }
+#iPhName {height: 22px;width: 230px;color: white;background-color: rgba(0, 0, 0, 0.8);border: 2px double grey;margin-bottom: 10px}
+#mf_tagMain {background-color: rgba(0, 0, 0, 0.8);width: auto;display: inline-flex;border:2px solid grey;height:auto;position: relative;height: 22px;margin-bottom: 10px;}
+#tagWind {width: 230px;height: 90px;border-top: 2px solid grey;border-left: 2px solid grey;border-right: 2px solid grey;background-color: rgba(0, 0, 0, 0.8);}
+#i_TxTagAdder {border: none;width: 150px;background: transparent;color: white;display: inline;}
+#s_TxTagAdder {display: inline;position: relative;float: right;font: 100 small-caps 12px/14px Arial;background-color: rgba(5, 22, 5, 0.4);width: 80px;border: none;border-left: 2px solid grey;color: yellow;cursor: pointer;}
 
+/*close button*/
 
-#iPhName {
-	height: 22px;
-	width: 230px;
-	color: white;
-	background-color: rgba(0, 0, 0, 0.8);
-	border: 2px double grey;
-	margin-bottom: 10px;
-}
+#modal_form #modal_close {width: 21px;height: 21px;position: absolute;top: 10px;right: 10px;cursor: pointer;display: block}
+
+/*logo*/
+
 #wrapLogo{display: inline-flex;position: absolute;width: 100%;height: 100%;}
 #imgadd {margin-left: 5%;;width: 57%}
 #infoadd {margin-left: 1%;width: 30%}
-#i_TxTagAdder {border: none;width: 150px;background: transparent;color: white;display: inline;}
-#s_TxTagAdder {display: inline;position: relative;float: right;font: 100 small-caps 12px/14px Arial;background-color: rgba(5, 22, 5, 0.4);width: 80px;border: none;border-left: 2px solid grey;color: yellow;cursor: pointer;}
-#mf_tagMain {background-color: rgba(0, 0, 0, 0.8);width: auto;display: inline-flex;border:2px solid grey;height:auto;position: relative;height: 22px;margin-bottom: 10px;}
-#tagWind {width: 230px;height: 90px;border-top: 2px solid grey;border-left: 2px solid grey;border-right: 2px solid grey;background-color: rgba(0, 0, 0, 0.8);}
+
+
+
 #discr {background-color: rgba(0, 0, 0, 0.8);color: white;border: 2px double grey;resize: none; }
-#rightSide h2 {color: yellow; opacity: 0.7;font:100 small-caps 17px Arial;margin-bottom: 10px; }
+
 #publish {display: inline;position: relative;float: right;font: 100 small-caps 12px/14px Arial;background-color: rgba(5, 22, 5, 0.4);margin-top: 3.5%;font: 100 small-caps 12px/14px Arial;width: 100px;padding: 5px;border: double rgba(153,255,20,0.8);color: yellow;cursor: pointer;}
-#publish:hover {border-color: yellow,background-color: rgba(255,255,255,0.1);}
+#publish:hover {border-color: yellow;background-color: rgba(255,255,255,0.1);}
 .addlogomf {font: 300 20px Arial;margin-top: 1%;display: inline;color: white;opacity: 0.8}
 .tags {font: 100 small-caps 12px/14px Arial;padding: 2px 0;background: transparent;color: yellow;display: inline-block;border: 2px solid white;margin: 3px;padding: 2px}
 .close_tag {font: 100 8px Txt ;background: transparent;color: red;display: inline-block;border: 1px solid white;margin: 2px;padding: 0.5px;cursor: pointer;position: relative;}
