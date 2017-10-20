@@ -19,7 +19,7 @@
  
 		$result = $mysqli->query("SELECT * FROM `images` ORDER BY `id` LIMIT $limit");		
 		if(!$result) 
-{ echo "Запрос не работает."; }
+{ echo "Images excised"; }
 		closeDB();
 			return resultToArray ($result);
 

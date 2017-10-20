@@ -9,7 +9,7 @@
 	}
 	
 	else 
-	echo "error here";
+	echo "usage: error here, path name and descr are empty";
 		
 	
 
@@ -30,16 +30,13 @@ function addImage () {
 		global $mysqli, $name, $disctiption, $path;
 		
 		connectDB();
-		  $checker = $mysqli->query("SELECT * FROM `users` WHERE email = '$email'");
-          $num = mysqli_num_rows($checker); 
-          if($num == 0)
-         
+		           
            $result = $mysqli->query("INSERT INTO `images` (`name`, `disctiption`, `path`) VALUES ('$name', '$disctiption' , '$path')");
            
            if($result)
-          echo "Vse proshlo kak po maslu";
+          echo "success";
           else 
-          echo "Так себе";
+          echo "usage: insert DB error ";
           
         
 			

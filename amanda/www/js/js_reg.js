@@ -129,7 +129,7 @@ $(this).css({'border-color' : 'yellow'});
              var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
             if(pattern.test($(this).val())){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
-                $('#validemail').text('Valid');
+                $('#validemail').text('accepted');
                 fail_email = false;  
             } else {
                 $(this).css({'border-color' : 'red'});
@@ -137,7 +137,7 @@ $(this).css({'border-color' : 'yellow'});
                 fail_email = true;
             }
         } else {
-            // Поле email пустое, выводим предупреждающее сообщение
+            // if empty
             $(this).css({'border-color' : 'red'});
             $('#validemail').text('Oops! You need to type your email here');
             fail_email = true;
@@ -150,17 +150,17 @@ $(this).css({'border-color' : 'yellow'});
              var pattern = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
             if(pattern.test($(this).val())){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
-                $('#validpass').text('Valid');
+                $('#validpass').text('accepted');
                 fail_pass = false;
             } else {
                 $(this).css({'border-color' : 'red'});
-                $('#validpass').text('Password is not valid');
+                $('#validpass').text('Usage: incorrect password format');
                 fail_pass = true;
             }
         } else {
-            // Поле email пустое, выводим предупреждающее сообщение
+            // if empty
             $(this).css({'border-color' : 'red'});
-            $('#validpass').text('Password field is empty');
+            $('#validpass').text('Usage: incorrect password - empty');
             fail_pass = true;
         }
     });
@@ -169,20 +169,20 @@ $(this).css({'border-color' : 'yellow'});
  		$('.validation').text('');
         $('.a_field').css({'border' : '2px double grey'});
         if($(this).val() !== '') {
-             //var pattern = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
+             
             if($(this).val() == $('#pass').val()){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
-                $('#validrepass').text('Valid Password');
+                $('#validrepass').text('accepted');
                 fail_repass = false;
             } else {
                 $(this).css({'border-color' : 'red'});
-                $('#validrepass').text('Not valid Password');
+                $('#validrepass').text('Usage: incorrect password format');
                 fail_repass = true;
             }
         } else {
-            // Поле email пустое, выводим предупреждающее сообщение
+            // if empty
             $(this).css({'border-color' : 'red'});
-            $('#validrepass').text('Please enter a password again');
+            $('#validrepass').text('Please retype your password');
             fail_repass = true;
         }
     });
@@ -193,17 +193,17 @@ $(this).css({'border-color' : 'yellow'});
              var pattern = /^[a-zA-Z]{1,20}$/g;
             if(pattern.test($(this).val())){
                 $(this).css({'border-color' : 'rgba(173, 255, 47, 0.7)'});
-                $('#validlogin').text('Valid Password');
+                $('#validlogin').text('accepted');
                 fail_login = false;
             } else {
                 $(this).css({'border-color' : 'red'});
-                $('#validlogin').text('Not valid Login');
+                $('#validlogin').text('Usage: incorrect login format');
                 fail_login = true;
             }
         } else {
-            // Поле email пустое, выводим предупреждающее сообщение
+            // if empty
             $(this).css({'border-color' : 'red'});
-            $('#validlogin').text('Login field is empty');
+            $('#validlogin').text('Usage: incorrect login - empty');
             fail_login = true;
         }
 

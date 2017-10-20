@@ -38,9 +38,9 @@ function registration () {
            $result = $mysqli->query("INSERT INTO `users` (`login`, `pass`, `email`) VALUES ('$login', '$pass' , '$email')");
            $_SESSION['login'] = $login;
            if($result)
-          echo "Vse proshlo kak po maslu";
+          echo "autorization success";
           else 
-          echo "Так себе";
+          echo "autorization unsuccess, error";
           
         
 			

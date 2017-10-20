@@ -41,7 +41,7 @@ if(isset($_GET['num'])){
           sleep(1); 
      	}
      	else{
-           echo 0; //Если записи закончились
+           echo 0;
      }
 
 } ?>
