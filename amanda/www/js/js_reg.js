@@ -5,8 +5,6 @@ $(document).ready(function() {
     if($('#sI_button').attr('value') == "Login"){
          login = $('#login').val();
          password = $('#pass').val();
-         //alert("Login")
-        
         $.ajax({
             url: '/ajax/reg_bd.php',
             type: 'POST',
@@ -71,12 +69,7 @@ $(document).ready(function() {
         width: "toggle"
         }, 1000, function () {
         
-
-            // Animation complete.
         });
-
-
-
 
         });
  

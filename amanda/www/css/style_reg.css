@@ -5,15 +5,11 @@
 }
 
 body {
-	
 	background-image: url(../images/background_1.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
 	background-color: black;
-	
-	
-
 }
 .loginForm {
 	width: 100%;
@@ -71,7 +67,6 @@ body {
 
 #sI_button:hover {background-color: rgba(227,200,0,0.1);}
 
-
 .a_field {
 	height: 22px;
 	width: 200px;
@@ -93,9 +88,6 @@ body {
 	color: yellow;
 }
 
-#email {
-
-}
 
 .sUp {
 	padding: 0.5%;

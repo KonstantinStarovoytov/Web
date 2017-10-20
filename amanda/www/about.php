@@ -4,51 +4,31 @@
     <?php
 	$title = "About";
 	require_once "blocks/head.php";
-	
 	?>
 	<script src="js/js_main.js" type="text/javascript"></script>
 	
 </head>
 <body id="body" >
-<!-- Top -->
-<header>
-<div id="top">
-	
-	<div class="shell">
-		
+
 		<!-- Header -->
 		<?php require_once "blocks/header.php" ?>
-		<!-- End Header -->
-						
-	</div>
-</div>
-</header>
-<!-- Top -->
 
 <!-- Main -->
 
-       
-    
-
-
-			
 <div id="main">
 	
 
 	<div class="shell">
 		
-		<!-- Search, etc -->
+		<!--  etc -->
 		<div class="options">
 			<h1 id="about_logo">About</h1>
 		</div>
-		<!-- End Search, etc -->
+		<!--  etc -->
 		
 		<!-- Content -->
 		<div id="content">
 			
-			<!-- Tabs -->
-			
-			<!-- Tabs -->
 			
 			<!-- Container -->
 			
@@ -58,19 +38,10 @@
 
 Throughout the history of business, people use data to make more informed decisions. Our mission at Apptopia is to make the app economy more transparent. Today we provide the most actionable mobile app data & insights in the industry. We want to make this data available to as many people as possible (not just the top 5%).</p>
 			</div>			
-					
-					
-				
-				
-				<!-- Brands -->
-				
-				<!-- End Brands -->
 				
 				<!-- Footer -->
 				<?php require_once "blocks/footer.php" ?>
-				<!-- End Footer -->
-				
-			
+
 			<!-- End Container -->
 			
 		</div>

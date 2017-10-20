@@ -77,14 +77,12 @@ h1#textLogo { padding: 40px 0 0 20px; margin-left: 50px; display: inline-block;}
 
 #container { background-color: rgba(255,255,255,0.15); padding:30px 30px; opacity: 1}
 
-.items { position:relative; width:870px; margin-right:20px; padding-bottom:5px; }
-.items ul{ list-style-type: none;vertical-align: middle;}
-.items ul .image{ text-align: center; line-height: 200px }
-.items ul .image img{ max-width: 175px; max-height: 175px; width: 100%;height: auto;vertical-align: middle;opacity: 1;border:2px solid rgba(0,0,0,0.9) }
-.items ul li{ float:left; border:dashed 1px rgba(255,255,255,0.5); width:194px;height: 194px; margin:0 12px 12px 0;background-color: rgba(0,0,0,0.75) }
-.items ul li p span{ color:#890000}
-.items ul li p.price{ padding-top:15px; }
-.items ul li p.price strong{ color:#890000; font-size:14px;}
+.photos { position:relative; width:870px; margin-right:20px; padding-bottom:5px; }
+.photos ul{ list-style-type: none;vertical-align: middle;}
+.photos ul .image{ text-align: center; line-height: 200px }
+.photos ul .image img{ max-width: 175px; max-height: 175px; width: 100%;height: auto;vertical-align: middle;opacity: 1;border:2px solid rgba(0,0,0,0.9) }
+.photos ul li{ float:left; border:dashed 1px rgba(255,255,255,0.5); width:194px;height: 194px; margin:0 12px 12px 0;background-color: rgba(0,0,0,0.75) }
+.photos ul li p span{ color:#890000}
 
 .brands h3 { padding-bottom:10px; }
 .brands a { margin-right:30px;}
@@ -101,17 +99,17 @@ h1#textLogo { padding: 40px 0 0 20px; margin-left: 50px; display: inline-block;}
 
 /*modal window*/
 
-#modal_form {
+#modalForm {
 	width: 750px; 
-	height: 500px; /* width and hight - fixed */
+	height: 500px; 
 	border: 3px rgba(255,255,255,0.3) solid;
 	background: rgba(0, 0, 0, 0.8);
 	position: absolute; 
 	top: 45%; 
 	left: 50%; 
 	margin-top: -250px;
-	margin-left: -375px; /* center */
-	display: none; /* hidden */
+	margin-left: -375px; 
+	display: none; 
 	opacity: 0; /* for JS animation */
 	z-index: 5; /* priorety */
 	padding: 20px 10px;
@@ -130,7 +128,7 @@ h1#textLogo { padding: 40px 0 0 20px; margin-left: 50px; display: inline-block;}
 	top:0; 
 	left:0;
 	cursor:pointer;
-	display:none; /* в oбычнoм сoстoянии её нет) */
+	display:none;
 }
 
 /*left  sides*/
@@ -153,7 +151,7 @@ h1#textLogo { padding: 40px 0 0 20px; margin-left: 50px; display: inline-block;}
 
 /*close button*/
 
-#modal_form #modal_close {width: 21px;height: 21px;position: absolute;top: 10px;right: 10px;cursor: pointer;display: block}
+#modalForm #modalClose {width: 21px;height: 21px;position: absolute;top: 10px;right: 10px;cursor: pointer;display: block}
 
 /*logo*/
 

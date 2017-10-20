@@ -1,20 +1,6 @@
 
 $( document ).ready( function(){
-        // $('#publish').click(function () {
-        //  var iPhName = $('#iPhName').val();
-        //  var discr = $('#discr').val();
-        // $.ajax({
-        //     url: '/functions/upload.php',
-        //     type: 'POST',
-        //     chache: false,
-        //     data: {'iPhName' : iPhName, 'discr' : discr},
-        //     dataType: 'html',
-        //     success: function(data){
-        //       alert(data);
-        //     }
-    //     // });
-
-    // });
+       
         var path;
        $("#inputFile").change(function() {
         
@@ -25,7 +11,7 @@ $( document ).ready( function(){
             }, 
             success:function(data){
                var tempImgPath = data;
-               var end = tempImgPath.indexOf(" class");
+               var end = tempImgPath.indexOf(" class"); //cut path from returned DB value
                path = tempImgPath.substring(10,end-1);
                $('#waitingImgUpl').css('display', 'none');
             }, 
@@ -34,7 +20,7 @@ $( document ).ready( function(){
             } 
         }).submit();
     });
-    
+    // upload photo on server and insert path link, name and description into DB
     $('#publish').click(function () {
         var iPhName = 'no name';
         var discr = 'no description';
@@ -57,7 +43,7 @@ $( document ).ready( function(){
         }); 
     });
     
-	
+	// Scroll: if scroll height + window height == docement height ->add 8 photos from DB
 	var num = 0;
     $(window).scroll( function (){
     	var windowScroll = $(window).scrollTop();
@@ -77,8 +63,8 @@ $( document ).ready( function(){
           	cache: false,
           	success: function(response){
           		$('#waiting').css('display', 'none');
-              if(response == 0){  // смотрим ответ от сервера и выполняем соответствующее действие
-                 alert("huinya");
+              if(response == 0){  
+                 alert("fail");
                  
               }else{
                  $('#ulmain').append(response);
@@ -93,7 +79,7 @@ $( document ).ready( function(){
     });
  
 	
-// вся мaгия пoсле зaгрузки стрaницы
+
 	var index = 1;
 	var tag;
 	var tagN;
@@ -114,47 +100,26 @@ $( document ).ready( function(){
 		$(this).parent().remove();
 	
 		});
-	$('a#go').click( function(event){ // лoвим клик пo ссылки с id="go"
-		event.preventDefault(); // выключaем стaндaртную рoль элементa
-		$('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
-		 	function(){ // пoсле выпoлнения предъидущей aнимaции
-				$('#modal_form') 
-					.css('display', 'block') // убирaем у мoдaльнoгo oкнa display: none;
-					.animate({opacity: 1, top: '50%'}, 200); // плaвнo прибaвляем прoзрaчнoсть oднoвременнo сo съезжaнием вниз
+	$('a#go').click( function(event){ 
+		event.preventDefault(); // 
+		$('#overlay').fadeIn(400, 
+		 	function(){ 
+				$('#modalForm') 
+					.css('display', 'block') 
+					.animate({opacity: 1, top: '50%'}, 200); 
 		});
 	});
-	/* Зaкрытие мoдaльнoгo oкнa, тут делaем тo же сaмoе нo в oбрaтнoм пoрядке */
-	$('#modal_close, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
-		$('#modal_form')
-			.animate({opacity: 0, top: '45%'}, 200,  // плaвнo меняем прoзрaчнoсть нa 0 и oднoвременнo двигaем oкнo вверх
+    
+	$('#modalClose, #overlay').click( function(){ 
+		$('#modalForm')
+			.animate({opacity: 0, top: '45%'}, 200,   
 				function(){ // пoсле aнимaции
-					$(this).css('display', 'none'); // делaем ему display: none;
-					$('#overlay').fadeOut(400); // скрывaем пoдлoжку
+					$(this).css('display', 'none'); 
+					$('#overlay').fadeOut(400); 
 				}
 			);
 	});
 
-
-	// $('#upload').click(function() {
-		
-	// 	$('#locker').show().animate({"opacity": 0.3},300);
-	// 	//$('#locker').attr('display','none');
-		
-	// 	$('#container').attr('display','none');
-	// 	//$('#Dialog').showModal().animate({"opacity": 1}, 300);
-		
-		
-	// });
-	// $('#closeDialog').click(function() {
-	// 	$('#locker').show().animate({"opacity": 0},300);
-	// 	$('#container').removeAttr('hidden')
-		
-		
-
-	// });
-	
-	
-	
 	$('.blink')
 		.focus(function(){
 			if( $(this).attr('value') == $(this).attr('title') ) {

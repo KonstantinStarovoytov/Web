@@ -6,32 +6,21 @@ session_start();
 require_once "functions/image_view.php";
 $title = "Image previewer";
 require_once "blocks/head.php"; 
-$images = getImage(7);
+$images = getImage(7); 
 ?>
 	<script src="js/js_main.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script> 
 	
 </head>
 <body id="body">
-<!-- Top -->
-<header>
-<div id="top">
-	
-	<div class="shell">
-		
+
 		<!-- Header -->
 		<?php require_once "blocks/header.php" ?>
-		<!-- End Header -->
-						
-	</div>
-</div>
-</header>
-<!-- Top -->
 
 <!-- Main -->
 <!-- Modal window -->
-	<div id="modal_form"><!-- Сaмo oкнo --> 
-    	<span id="modal_close">X</span> <!-- Кнoпкa зaкрыть --> 
+	<div id="modalForm"> 
+    	<span id="modalClose">X</span>
      	<div id="wrapLogo"><div id="imgadd"><h1 id="add_image" class="addlogomf">ADD IMAGE</h1></div><div id="infoadd"><h1 id="add_info" class="addlogomf">ADD INFO</h1></div></div>
 		
     	
@@ -39,7 +28,7 @@ $images = getImage(7);
     	
     	<form id="imageform" method="post" enctype="multipart/form-data" action='/functions/upload.php' style="clear:both">
     	<div id="inpImg">
-    	    <img src="images/379.png" alt="" style="opacity: 0.8; display: none;margin: auto;padding-top:45px" id="waitingImgUpl"  >
+    	    <img src="images/379.png" alt="" style="opacity: 0.8; display: none;margin: auto;padding-top:45px" id="waitingImgUpl"  />
 		<input type="file" size="1" id="inputFile" name="inputFile[]" />
 		</div>
         </form>
@@ -73,18 +62,8 @@ $images = getImage(7);
 		</div>
 	
 	</div>
-	<div id="overlay"></div><!-- Пoдлoжкa -->
+	<div id="overlay"></div>
        
-    
-
-
-			<!-- <div id="dialogCont">
-			
-			<div ><img src="css/images/uploadimg.png" /></div>
-			<button id="closeDialog" >Закрыть</button>
-			
-			</div>
-			</div> -->
 <div id="main">
 	
 
@@ -114,19 +93,15 @@ $images = getImage(7);
 		<!-- Content -->
 		<div id="content">
 			
-			<!-- Tabs -->
-
-			<!-- Tabs -->
 			
 			<!-- Container -->
 			<div id="container">
 				
 				<div class="tabbed">
 					
-					<!-- First Tab Content -->
 					<div class="tab-content" style="display:block;">
 						
-						<div class="items">
+						<div class="photos">
 							<div class="cl">&nbsp;</div>
 
 							<ul id="ulmain">
@@ -137,9 +112,9 @@ $images = getImage(7);
 							    	</div>
 							    	
 							    	
-							    </li>
-							    <?php
-								for ($i = 0; $i < count($images); $i++){
+							    	</li>
+							    	<?php
+									for ($i = 0; $i < count($images); $i++){
 									echo ' <li>
 							    	<div class="image">
 							    		<a href="#" title=""><img src="'.$images[$i]["path"].'" alt="" /></a>
@@ -175,7 +150,6 @@ $images = getImage(7);
 				
 				<!-- Footer -->
 				<?php require_once "blocks/footer.php" ?>
-				<!-- End Footer -->
 				
 			</div>
 			<!-- End Container -->
